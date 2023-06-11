@@ -6,12 +6,11 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 12:39:44 by vfrants           #+#    #+#             */
-/*   Updated: 2023/06/11 14:21:06 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/06/11 14:23:49 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int	power_of_ten(int power)
 {
