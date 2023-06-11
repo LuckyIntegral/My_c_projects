@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 12:39:44 by vfrants           #+#    #+#             */
-/*   Updated: 2023/06/11 14:19:33 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/06/11 14:21:06 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void	ft_print_comb(void)
 	}
 }
 
-int main(int argc, char const *argv[])
-{
-	ft_print_comb();
-	return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+// 	ft_print_comb();
+// 	return 0;
+// }
