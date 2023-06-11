@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/11 14:23:08 by vfrants           #+#    #+#             */
-/*   Updated: 2023/06/11 15:46:36 by vfrants          ###   ########.fr       */
+/*   Created: 2023/06/11 15:59:35 by vfrants           #+#    #+#             */
+/*   Updated: 2023/06/11 16:08:15 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,55 @@ void print_n(int n)
 	write(1, &c, 1);
 }
 
-void ft_print_comb2(void)
+int power_of_ten(int power)
 {
-	int	i;
-	int	j;
+	int result;
+	int i;
 
 	i = 0;
-	while (i <= 98)
+	result = 1;
+	while (i < power)
 	{
-		j = i + 1;
-		while (j <= 99)
+		result *= 10;
+		i++;
+	}
+	return (result);
+}
+
+int check_condition(int n, int len)
+{
+	int i;
+
+	i = 1;
+	while (i <= len - 1)
+	{
+		if ((n / power_of_ten(i - 1)) % 10 <= (n / power_of_ten(i)) % 10)
+			return (0);
+		i++;
+	}
+	return 1;
+}
+
+void ft_print_combn(int n)
+{
+	int i;
+
+	i = 0;
+	while (i < power_of_ten(n))
+	{
+		if (check_condition(i, n))
 		{
-			if (i < 10)
+			if (i / power_of_ten(n - 1) == 0 && n != 1)
 				write(1, "0", 1);
 			print_n(i);
-			write(1, " ", 1);
-			if (j < 10)
-				write(1, "0", 1);
-			print_n(j);
-			if (i != 98)
+			if (i / power_of_ten(n - 1) != 10 - n)
 				write(1, ", ", 2);
-			j++;
 		}
 		i++;
 	}
 }
 
-// int	main()
-// {
-// 	ft_print_comb2();
-// }
+int	main()
+{
+	ft_print_combn(7);
+}
