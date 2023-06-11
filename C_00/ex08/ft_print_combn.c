@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 15:59:35 by vfrants           #+#    #+#             */
-/*   Updated: 2023/06/11 16:08:15 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/06/11 16:13:09 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void ft_print_combn(int n)
 	}
 }
 
-int	main()
-{
-	ft_print_combn(7);
-}
+// int	main()
+// {
+// 	ft_print_combn(7);
+// }
