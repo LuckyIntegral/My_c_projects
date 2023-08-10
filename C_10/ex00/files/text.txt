@@ -1,0 +1,4 @@
+You can only do this exercise by declaring a fixed-sized array.
+This array will have a size limited to a little less than 30 ko.
+In order to test that size-limit, use the ulimit command-line in your Shell.
+END OF THE FILE
