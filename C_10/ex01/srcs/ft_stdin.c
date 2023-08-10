@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 23:50:21 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/10 23:52:22 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/11 00:22:35 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	ft_stdin(void)
 	char	c;
 
 	while (read(STDIN, &c, 1))
-		write(1, &c, 1);
+		write(STDOUT, &c, 1);
 }

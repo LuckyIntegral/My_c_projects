@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:08:44 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/10 23:59:09 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/11 00:23:02 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_display_file(char *file)
 	if (port == - 1)
 		return (0);
 	while (read(port, &c, 1))
-		write(1, &c, 1);
+		write(STDIN, &c, 1);
 	return (close(port));
 }
