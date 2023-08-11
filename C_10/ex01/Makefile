@@ -6,13 +6,13 @@
 #    By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 22:29:04 by vfrants           #+#    #+#              #
-#    Updated: 2023/08/10 23:55:07 by vfrants          ###   ########.fr        #
+#    Updated: 2023/08/11 13:15:51 by vfrants          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
-NAME	= cat
+NAME	= ft_cat
 SRCDIR	= srcs
 INCDIR	= includes
 
