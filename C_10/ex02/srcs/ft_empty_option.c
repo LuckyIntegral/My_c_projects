@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_empty_option.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 22:38:13 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/11 22:15:42 by vfrants          ###   ########.fr       */
+/*   Created: 2023/08/11 21:22:02 by vfrants           #+#    #+#             */
+/*   Updated: 2023/08/11 21:34:08 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#include "ft_tail_header.h"
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <errno.h>
-# include <libgen.h>
-# include <string.h>
+void ft_empty_option(void)
+{
+	int i;
 
-void	ft_putstr(char *str, int port);
-void	ft_handle_error(char *file);
-void	ft_stdin(void);
-int	ft_display_file(char *file);
-
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
-
-#endif
+	i = 0;
+	while (1)
+		i = i + 0;
+}

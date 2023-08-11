@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_fsize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 22:38:13 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/11 22:15:42 by vfrants          ###   ########.fr       */
+/*   Created: 2023/08/11 21:24:25 by vfrants           #+#    #+#             */
+/*   Updated: 2023/08/11 21:46:51 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#include "ft_tail_header.h"
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <errno.h>
-# include <libgen.h>
-# include <string.h>
+t_size ft_fsize(char *file)
+{
+	t_size	size;
+	char	c;
+	int	port;
 
-void	ft_putstr(char *str, int port);
-void	ft_handle_error(char *file);
-void	ft_stdin(void);
-int	ft_display_file(char *file);
-
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
-
-#endif
+	size = 0;
+	port = open(file, O_RDONLY);
+	if (port == -1 || errno)
+		return (-1);
+	while (read(port, &c, 1))
+		size++;
+	return (size);
+}
