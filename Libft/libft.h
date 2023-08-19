@@ -6,14 +6,15 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 01:12:12 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/19 23:45:11 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/20 00:06:04 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define NULL ((void *)0)
+# include "stdlib.h"
+# include "errno.h"
 
 typedef unsigned long size_t;
 
@@ -42,6 +43,7 @@ int	ft_isprint(int c);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
 
-
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 
 #endif
