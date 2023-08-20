@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 01:12:12 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/20 00:06:04 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/20 15:29:36 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 
 # include "stdlib.h"
 # include "errno.h"
+# include "unistd.h"
 
 typedef unsigned long size_t;
 
-// Part one
+# define MAX(A, B) ((A) < (B) ? (B) : (A))
+# define MIN(A, B) ((A) < (B) ? (A) : (B))
+# define ABS(A) ((A) < 0 ? -(A) : (A))
+
+// Part 1
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -45,5 +50,18 @@ int	ft_tolower(int c);
 
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+
+// Part 2
+
+char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+char **ft_split(char const *s, char c);
+char *ft_itoa(int n);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 
 #endif
