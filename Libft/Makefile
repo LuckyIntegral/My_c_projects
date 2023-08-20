@@ -6,7 +6,7 @@
 #    By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/18 01:12:15 by vfrants           #+#    #+#              #
-#    Updated: 2023/08/20 15:34:30 by vfrants          ###   ########.fr        #
+#    Updated: 2023/08/20 16:52:17 by vfrants          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,13 @@ SRCS	= \
 		ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+SRCS_B	= \
+		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
 OBJS	= ${SRCS:.c=.o}
+
+OBJS_B	= ${SRCS_B:.c=.o}
 
 %.o		: %.c
 		${CC} ${CFLAGS} -c $< -o $@ -I .
@@ -31,10 +37,13 @@ OBJS	= ${SRCS:.c=.o}
 ${NAME}	: ${OBJS}
 		ar -rc $@ ${OBJS}
 
+bonus	: ${OBJS_B}
+		ar -rc ${NAME} ${OBJS_B}
+
 all		: ${NAME}
 
 clean	:
-		rm -f ${OBJS}
+		rm -f ${OBJS} ${OBJS_B}
 
 fclean	: clean
 		rm -f ${NAME}
