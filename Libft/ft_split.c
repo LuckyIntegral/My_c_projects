@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 12:23:36 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/20 12:36:49 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/20 18:00:31 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,17 @@ static char	*ft_setpar(const char *str, char c, int *i)
 	return (ft_substr(str, beggin, *i - beggin));
 }
 
+static void	*ft_clean(char ***split_ptr, int i)
+{
+	char **split;
+
+	split = *split_ptr;
+	while (i--)
+		free(split[i]);
+	free(split);
+	return (*split_ptr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
@@ -56,6 +67,8 @@ char	**ft_split(char const *s, char c)
 	while (i < words)
 	{
 		res[i] = ft_setpar(s, c, &current);
+		if (!res[i])
+			return (ft_clean(&res, i + 1));
 		i++;
 	}
 	res[i] = NULL;
