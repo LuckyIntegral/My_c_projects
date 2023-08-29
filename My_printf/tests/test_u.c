@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 22:28:03 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/29 09:59:28 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/29 10:41:05 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int main()
 	printf_result = printf("Output = |%05.*u|\n", 4, 123); // Width with zero flag and precision
 	printf("> {%d}\n", ft_result);
 	printf("> {%d}\n", printf_result);
+
+	ft_printf("\n--------------- The end of the test ---------------\n");
 
 	return 0;
 }

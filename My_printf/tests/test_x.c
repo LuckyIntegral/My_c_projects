@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 22:28:03 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/29 09:59:58 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/29 10:41:11 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ int main()
 	printf_result = printf("Output = |%*x|\n", -8, 76543);
 	printf("> {%d}\n", ft_result);
 	printf("> {%d}\n", printf_result);
+
+	ft_printf("\n--------------- The end of the test ---------------\n");
 
 	return 0;
 }

@@ -6,12 +6,12 @@
 #    By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 20:10:51 by vfrants           #+#    #+#              #
-#    Updated: 2023/08/29 10:31:33 by vfrants          ###   ########.fr        #
+#    Updated: 2023/08/29 10:36:35 by vfrants          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
-CFLAGS	= #-Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 NAME	= libftprintf.a
 
 LIBDIR	= ./libft

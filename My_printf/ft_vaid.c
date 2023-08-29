@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:50:00 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/28 13:54:04 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/29 10:38:25 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int ft_get_spaces(t_flags *flags, size_t strlen)
 			else
 				res = flags->numb + strlen;
 		}
-		else if (flags->numb >= strlen)
+		else if (flags->numb >= (int)strlen)
 			res = flags->numb - strlen;
 	}
 	else if (flags->zero && flags->dot)
