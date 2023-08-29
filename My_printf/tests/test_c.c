@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 20:38:30 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/27 19:52:26 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/29 09:58:53 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 
 int main()
 {
-	printf("> {%d}\n", ft_printf("Output=|%-7c|", 42));
-	printf("> {%d}\n", printf("Output=|%-7c|", 42));
-
 	int ft_result, printf_result;
+
+	ft_printf("\n--------------- Char test (c) ---------------\n\n");
 
 	// No flags
 	ft_result = ft_printf("Output = |%c|\n", 'A');

@@ -6,7 +6,7 @@
 #    By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 20:10:51 by vfrants           #+#    #+#              #
-#    Updated: 2023/08/28 18:24:14 by vfrants          ###   ########.fr        #
+#    Updated: 2023/08/29 10:31:33 by vfrants          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,23 +23,23 @@ SRCS	= ft_vac.c ft_vaid.c ft_vap.c ft_vas.c ft_vau.c ft_vax.c ft_vaxx.c \
 OBJS	= ${SRCS:.c=.o}
 
 %.o		: %.c
-		${CC} ${CFLAGS} -o $@ -c $< -I .
+		@${CC} ${CFLAGS} -o $@ -c $< -I .
 
-${NAME}	: ${LIBFT} ${OBJ_DIR} ${OBJS}
-		cp	${LIBFT} ${NAME}
-		ar -rcs $@ ${OBJS}
+${NAME}	: ${LIBFT} ${OBJS}
+		@cp ${LIBFT} ${NAME}
+		@ar -rcs $@ ${OBJS}
 
 ${LIBFT}:
-		make -C $(LIBDIR) all
+		@make -C $(LIBDIR) all
 
 all		: ${NAME}
 
 clean	:
-		make -C ${LIBDIR} clean
-		rm -f ${OBJS} ${OBJS_B}
+		@make -C ${LIBDIR} clean
+		@rm -f ${OBJS} ${OBJS_B}
 
 fclean	: clean
-		make -C ${LIBDIR} fclean
-		rm -f ${NAME}
+		@make -C ${LIBDIR} fclean
+		@rm -f ${NAME}
 
 re		: fclean all

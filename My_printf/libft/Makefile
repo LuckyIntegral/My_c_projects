@@ -6,7 +6,7 @@
 #    By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/18 01:12:15 by vfrants           #+#    #+#              #
-#    Updated: 2023/08/21 19:14:57 by vfrants          ###   ########.fr        #
+#    Updated: 2023/08/29 10:30:25 by vfrants          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,20 +32,20 @@ OBJS	= ${SRCS:.c=.o}
 OBJS_B	= ${SRCS_B:.c=.o}
 
 %.o		: %.c
-		${CC} ${CFLAGS} -c $< -o $@ -I .
+		@${CC} ${CFLAGS} -c $< -o $@ -I .
 
 ${NAME}	: ${OBJS}
-		ar -rc $@ ${OBJS}
+		@ar -rc $@ ${OBJS}
 
 bonus	: ${OBJS_B}
-		ar -rc ${NAME} ${OBJS_B}
+		@ar -rc ${NAME} ${OBJS_B}
 
 all		: ${NAME}
 
 clean	:
-		rm -f ${OBJS} ${OBJS_B}
+		@rm -f ${OBJS} ${OBJS_B}
 
 fclean	: clean
-		rm -f ${NAME}
+		@rm -f ${NAME}
 
 re		: fclean ${NAME}

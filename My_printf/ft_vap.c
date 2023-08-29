@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:42:41 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/28 18:22:23 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/29 10:25:34 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int ft_poff(size_t len, int zero, int dot)
 
 	res = 0;
 	if (dot)
-		res = dot - len - 2;
+		res = dot - len;
 	else
-		res = zero - len - 2;
+		res = zero - 2 - len;
 	if (res <= 0)
 		return (0);
 	return (res);

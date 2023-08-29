@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   test_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 22:28:03 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/28 18:20:04 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/08/29 09:58:49 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int main()
 {
 	void *ptr = (void *)0x12345678;
 	int ft_result, printf_result;
+
+	ft_printf("\n--------------- Pointer test (p) ---------------\n\n");
 
 	// Mix flags and minimum field width
 	ft_result = ft_printf("Output = |%20p|\n", ptr);
