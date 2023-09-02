@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:07:46 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/19 16:29:22 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/09/01 21:34:50 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,17 @@ static int	ft_strstr(const char *a, const char *b, size_t len)
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (!needle)
+	size_t i;
+
+	i = 0;
+	if (!needle || !*needle || needle == haystack)
 		return ((char *)haystack);
-	while (*haystack)
+	while (haystack[i] && i < len)
 	{
-		if (*haystack == *needle)
-			if (ft_strstr(haystack, needle, len))
-				return ((char *)haystack);
-		haystack++;
+		if (haystack[i] == *needle)
+			if (ft_strstr(&haystack[i], needle, len))
+				return ((char *)(haystack + i));
+		i++;
 	}
 	return (NULL);
 }

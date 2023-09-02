@@ -6,70 +6,70 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 12:23:36 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/20 18:00:31 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/09/02 18:49:24 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(const char *str, char c)
+static size_t ft_word_counter(char const *s, char c)
 {
-	int	counter;
+	size_t count;
 
-	counter = 1;
-	while (*str == c)
-		str++;
-	while (*str)
+	if (!s || !*s)
+		return (0);
+	count = 0;
+	while (*s)
 	{
-		if (*str == c && *(str + 1) != '\0' && *(str + 1) != c)
-			counter++;
-		str++;
+		while (*s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s != c && *s)
+			s++;
 	}
-	return (counter);
+	return (count);
 }
 
-static char	*ft_setpar(const char *str, char c, int *i)
+static size_t	ft_wordlen(const char *s, char c)
 {
-	int beggin;
-
-	while (c == str[*i])
-		(*i)++;
-	beggin = *i;
-	while (c != str[*i] && str[*i])
-		(*i)++;
-	return (ft_substr(str, beggin, *i - beggin));
+	if (!ft_strchr(s, c))
+		return (ft_strlen(s));
+	else
+		return (ft_strchr(s, c) - s);
 }
 
-static void	*ft_clean(char ***split_ptr, int i)
+static void	*ft_clean(char **strs, int i)
 {
-	char **split;
-
-	split = *split_ptr;
-	while (i--)
-		free(split[i]);
-	free(split);
-	return (*split_ptr);
+	while (i-- > 0)
+		free(strs[i]);
+	free(strs);
+	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
+	size_t	len;
 	char	**res;
-	int current;
-	int	words;
 	int	i;
 
-	words = ft_count_words(s, c);
-	res = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!s)
+		return (NULL);
+	res = (char **)malloc(sizeof(char *) * (ft_word_counter(s, c) + 1));
 	if (!res)
-		return (0);
+		return (NULL);
 	i = 0;
-	current = 0;
-	while (i < words)
+	while (*s)
 	{
-		res[i] = ft_setpar(s, c, &current);
-		if (!res[i])
-			return (ft_clean(&res, i + 1));
-		i++;
+		while (*s == c && *s)
+			s++;
+		if (!*s)
+			break ;
+		len = ft_wordlen(s, c);
+		res[i] = ft_substr(s, 0, len);
+		if (!res[i++])
+			return (ft_clean(res, --i));
+		s += len;
 	}
 	res[i] = NULL;
 	return (res);

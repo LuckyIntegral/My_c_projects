@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:58:31 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/19 02:06:10 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/09/01 18:57:48 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*(s + len) == (char)c)
 			return ((char *)(s + len));
-		s++;
 	}
 	return (NULL);
 }
