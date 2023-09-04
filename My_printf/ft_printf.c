@@ -6,7 +6,7 @@
 /*   By: vfrants <frantsv2004@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 20:34:43 by vfrants           #+#    #+#             */
-/*   Updated: 2023/08/28 17:08:48 by vfrants          ###   ########.fr       */
+/*   Updated: 2023/09/02 19:45:30 by vfrants          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int ft_put_arg(va_list *ap, t_flags *flags, char type)
 	else if (type == 'c')
 		counter += ft_vac(flags, va_arg(*ap, int));
 	else if (type == 's')
-		counter += ft_vas(flags, va_arg(*ap, const char *));
+		counter += ft_vas(flags, va_arg(*ap, char *));
 	else if (type == 'p')
 		counter += ft_vap(flags, va_arg(*ap, void *));
 	else if (type == 'd' || type == 'i')
@@ -92,8 +92,10 @@ int ft_parse_args(va_list *ap, t_flags *flags, const char *str)
 	counter = 0;
 	while (str[i])
 	{
-		if (str[i] == '%' && str[i + 1])
+		if (str[i] == '%')
 		{
+			if (!str[i + 1])
+				break ;
 			ft_flags_init(flags);
 			i = ft_parse_flag(ap, flags, str, ++i);
 			counter += ft_put_arg(ap, flags, str[i++]);
